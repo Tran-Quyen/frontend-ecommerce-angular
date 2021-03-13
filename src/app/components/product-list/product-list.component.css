@@ -1,0 +1,19 @@
+.product__img-item {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.product__img-item:hover {
+  transform: scale(1.4);
+}
+
+.product__price {
+  display: flex;
+  justify-content: space-around;
+}
+
+.product__price a {
+  text-decoration: none;
+  border-radius: 30px;
+}

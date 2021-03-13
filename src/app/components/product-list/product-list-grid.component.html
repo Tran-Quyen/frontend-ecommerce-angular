@@ -1,0 +1,44 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <h4>Category: {{ currentCategoryName }}</h4>
+    <hr />
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Loop over the collection of products -->
+        <div *ngFor="let product of products" class="col-md-3">
+          <div class="product-box">
+            <a routerLink="/products/{{ product.id }}">
+              <img
+                src="{{ product.imageUrl }}"
+                alt="{{ product.name }}"
+                class="product__img-item img-responsive"
+              />
+            </a>
+
+            <a routerLink="/products/{{ product.id }}">
+              <h1 style="text-align: center">{{ product.name }}</h1>
+            </a>
+
+            <div class="product__price">
+              <div class="price">
+                {{ product.unitPrice | currency: "USD" }}
+              </div>
+              <a href="#" class="primary-btn">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- If products empty then display a message -->
+        <div
+          *ngIf="products?.length == 0"
+          class="alert alert-warning col-md-12"
+          role="alert"
+          style="text-align: center; font-size: 50px"
+        >
+          No products found !
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="menu-sidebar-content js-scrollbar1">
+  <nav class="navbar-sidebar">
+    <ul class="list-unstyled navbar-list">
+      <!-- routerLink là dẫn đén path url routerLinkActive là để CSS khi được active -->
+      <li *ngFor="let item of productCategories">
+        <a
+          routerLink="/category/{{ item.id }}/{{ item.categoryName }}"
+          routerLinkActive="active-link"
+        >
+          {{ item.categoryName }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
