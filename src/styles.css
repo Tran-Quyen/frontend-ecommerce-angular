@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 /*
  * ----------------------------
  * Common CSS
@@ -532,7 +531,7 @@ input.au-input.au-input-xl {
   background: #fff;
 }
 .main-content.page-m {
-  padding: 10% 15% !important;
+  padding: 10% 30% 10% 5%;
 }
 
 /*
@@ -738,9 +737,15 @@ table.table.table-bordered th {
   font-weight: 800;
   color: #0da8e4;
 }
+
 .detail-section {
   margin-top: 60px;
 }
+
+.detail-img {
+  width: 30%;
+}
+
 /**/
 
 /*
@@ -786,7 +791,6 @@ footer {
   background: #232324;
   z-index: 1;
   position: relative;
-  bottom: -15px;
   text-align: center;
 }
 footer li a {
@@ -992,7 +996,7 @@ footer ul li {
     text-align: center;
   }
   .product-box {
-    text-align: center;
+    text-align: centerg;
   }
   .page-container {
     position: relative;
@@ -1046,7 +1050,6 @@ footer ul li {
     margin-top: 9px;
     padding-left: 12px;
   }
-
   .header-mobile .header-mobile-bar {
     padding: 6px 0;
     background: #fff;

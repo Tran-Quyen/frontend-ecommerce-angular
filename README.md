@@ -1,3 +1,18 @@
+# Design By Dang Tran Quyen - Phone:0337846412
+
+# Local Bootstrap
+
+npm i bootstrap
+
+# Local Font-awesome
+
+npm i @fortawesome/fontawesome-free
+
+# Install new necessary features and ng-bootstrap in order to using NgbModule
+
+$ ng add @angular/localize
+$ npm install @ng-bootstrap/ng-bootstrap
+
 # AngularEcommerce
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.

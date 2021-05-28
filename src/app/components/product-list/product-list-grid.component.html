@@ -6,7 +6,10 @@
     <div class="container-fluid">
       <div class="row">
         <!-- Loop over the collection of products -->
-        <div *ngFor="let product of products" class="col-md-3">
+        <div
+          *ngFor="let product of products"
+          class="col-lg-3 col-md-4 col-sm-6"
+        >
           <div class="product-box">
             <a routerLink="/products/{{ product.id }}">
               <img
@@ -16,15 +19,25 @@
               />
             </a>
 
-            <a routerLink="/products/{{ product.id }}">
-              <h1 style="text-align: center">{{ product.name }}</h1>
+            <a
+              routerLink="/products/{{ product.id }}"
+              style="display: block; margin: 0 auto; text-align: center"
+            >
+              <h1>
+                {{ product.name }}
+              </h1>
             </a>
 
             <div class="product__price">
               <div class="price">
                 {{ product.unitPrice | currency: "USD" }}
               </div>
-              <a href="#" class="primary-btn">Add to cart</a>
+              <button
+                class="btn btn-primary btn-sm"
+                (click)="addToCart(product)"
+              >
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
@@ -39,6 +52,46 @@
           No products found !
         </div>
       </div>
+
+      <!-- Begin: Pagination -->
+      <div class="footer-pagination">
+        <div class="row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-9" style="padding-left: 22%">
+                <!-- Use ng bootstrap -->
+                <ngb-pagination
+                  [(page)]="thePageNumber"
+                  [pageSize]="thePageSize"
+                  [collectionSize]="theTotalElements"
+                  [maxSize]="5"
+                  [boundaryLinks]="true"
+                  (pageChange)="listProducts()"
+                >
+                </ngb-pagination>
+              </div>
+
+              <div class="col-md-3" style="text-align: right">
+                <span class="mr-2">Page Size</span>
+                <select
+                  name=""
+                  id="page-size-select"
+                  class="px-2"
+                  style="border-radius: 5px"
+                  (change)="updatePageSize($event || 5)"
+                >
+                  <option value="5">5</option>
+                  <option value="10" selected="true">10</option>
+                  <option value="20">20</option>
+                  <option value="50">50</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: Pagination -->
     </div>
   </div>
 </div>
